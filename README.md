@@ -6,13 +6,15 @@ Tested on Jellyfin 10.10.3 stable.
 Step 1: Get a root shell in Jellyfin
 ```shell
 docker exec -it --user root jellyfin /bin/bash
-root@server:/# whoami
-root
 ```
 
-Step 1: Find the `main.jellyfin.bundle.js` file
+Step 2: Find the `main.jellyfin.bundle.js` file
+```shell
+find / -type f -name "main.jellyfin.bundle.js"
 ```
-sudo find / -type f -name "main.jellyfin.bundle.js"
+```shell
+...
+/jellyfin/jellyfin-web/main.jellyfin.bundle.js
 ```
 
 Step 2: Modify the script to target the file
