@@ -3,6 +3,13 @@
 A simple script to force backdrops for Jellyfin clients.
 Tested on Jellyfin 10.10.3 stable.
 
+Step 1: Get a root shell in Jellyfin
+```shell
+docker exec -it --user root jellyfin /bin/bash
+root@server:/# whoami
+root
+```
+
 Step 1: Find the `main.jellyfin.bundle.js` file
 ```
 sudo find / -type f -name "main.jellyfin.bundle.js"
