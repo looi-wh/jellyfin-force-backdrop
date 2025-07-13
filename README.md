@@ -12,16 +12,17 @@ Step 2: Find the `main.jellyfin.bundle.js` file
 ```shell
 find / -type f -name "main.jellyfin.bundle.js"
 ```
+You should see something like
 ```shell
 ...
 /jellyfin/jellyfin-web/main.jellyfin.bundle.js
 ```
 
 Step 2: Modify the script to target the file
-```
+```shell
 FILE="/jellyfin/jellyfin-web/main.jellyfin.bundle.js"
 ```
-Note: The above is set for docker
+Note: Replace accordingly to step 2
 
 Step 3: Make it executable and run it!
 ```
