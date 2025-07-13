@@ -18,16 +18,9 @@ You should see something like
 /jellyfin/jellyfin-web/main.jellyfin.bundle.js
 ```
 
-Step 2: Modify the script to target the file
-```shell
-FILE="/jellyfin/jellyfin-web/main.jellyfin.bundle.js"
+Step 3: Replace `/jellyfin/jellyfin-web/main.jellyfin.bundle.js` with the path to `main.jellyfin.bundle.js` file and execute this command
 ```
-Note: Replace accordingly to step 2
-
-Step 3: Make it executable and run it!
-```
-chmod +x script.sh
-./script.sh
+f=/jellyfin/jellyfin-web/main.jellyfin.bundle.js; if [ -f "$f" ] && grep -q 'enableBackdrops:function(){return R}' "$f"; then read -p "String found! Replace with E? (y/n) " r && [[ $r =~ ^[Yy]$ ]] && sed -i 's/enableBackdrops:function(){return R}/enableBackdrops:function(){return E}/' "$f" && grep -q 'enableBackdrops:function(){return E}' "$f" && echo "Change confirmed: line updated." || echo "Change aborted or failed."; else echo "File missing or string not found."; fi
 ```
 Note: There is no backups created with this script. Do your own backups in case you want to revert!
 
